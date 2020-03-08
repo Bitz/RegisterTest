@@ -1,0 +1,11 @@
+<div class="row p-3" *ngIf="step != null">
+  <div class="col-xs-12 col-md-8 m-auto pb-4">
+    <div class="wrapper-progressBar">
+      <ul class="progressBar">
+        <li [ngClass]="{'active' : step >= 1}" step="1">Login</li>
+        <li [ngClass]="{'active' : step >= 2}" step="2">Submit Info</li>
+        <li [ngClass]="{'active' : step >= 3}" step="3">Complete</li>
+      </ul>
+    </div>
+  </div>
+</div>

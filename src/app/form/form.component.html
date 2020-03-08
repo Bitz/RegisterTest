@@ -1,0 +1,58 @@
+<form  [formGroup]="mainForm" (ngSubmit)="onSubmit()">
+  <div>
+    <p>Please fill in the following required information.</p>
+    <div class="form-group">
+      <label for="first-name">First Name *</label>
+      <input id="first-name" type="text" class="form-control"
+             [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" formControlName="firstName"/>
+      <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+        <div *ngIf="f.firstName.errors.required">First name is required</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="last-name">Last Name *</label>
+      <input id="last-name" type="text" class="form-control"
+             [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" formControlName="lastName"/>
+      <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+        <div *ngIf="f.lastName.errors.required">Last name is required</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="state">State *</label>
+      <select ng-model="availableStates"  id="state" type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.state.errors }" formControlName="state">
+        <option *ngFor="let s of availableStates" [ngValue]="s.abbr">{{s.name}}</option>
+      </select>
+      <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
+        <div *ngIf="f.state.errors.required">State is required</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email *</label>
+      <input id="email" type="text" class="form-control"
+             [ngClass]="{ 'is-invalid': submitted && f.email.errors }" formControlName="email"/>
+      <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+        <div *ngIf="f.email.errors.required">Email is required</div>
+        <div *ngIf="f.email.errors.equalValue">Emails must match</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email-confirm">Confirm Email *</label>
+      <input id="email-confirm" type="email" class="form-control"
+             [ngClass]="{ 'is-invalid': submitted && f.emailConfirm.errors }" formControlName="emailConfirm"/>
+      <div *ngIf="submitted && f.emailConfirm.errors" class="invalid-feedback">
+        <div *ngIf="f.emailConfirm.errors.required">Email is required</div>
+        <div *ngIf="f.emailConfirm.errors.equalValue">Emails must match</div>
+      </div>
+    </div>
+    <div class="form-check">
+      <label class="form-check-label" for="subscribe">
+        <input type="checkbox" class="form-check-input" value="" name="subscribe" id="subscribe" formControlName="subscribe">Subscribe to Newsletter
+      </label>
+    </div>
+  </div>
+  <div class="row ml-1">
+    <div class="ml-auto mr-3">
+      <button type="submit" style="min-width: 12rem;" class="btn btn-primary">Continue</button>
+    </div>
+  </div>
+</form>
