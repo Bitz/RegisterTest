@@ -1,1 +1,68 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+
+
+
+body {
+  background: #DEDEDE;
+  color: #555555;
+  padding-bottom: 4rem;
+}
+
+.custom-nav-top-header {
+  background: white;
+  padding: 15px;
+  border-bottom: 1px solid #aaaaaa;
+  text-align: center;
+  width: 100%;
+  vertical-align: middle;
+  margin-bottom: 25px;
+}
+
+.custom-nav-top-header img {
+  max-height: 64px;
+
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background: #aaaaaa;
+  padding: 1rem;
+  color: #6B6B6B;
+}
+
+
+.blue-section {
+  padding: 0.5rem;
+  background: #2988B6;
+  font-size: x-large;
+  color: white;
+  text-align: center;
+}
+
+.btn.btn-primary {
+  background: #1b5875;
+  border: #1b5875;
+}
+
+.btn.btn-primary:active {
+  background: #2988b5;
+  border: #2988b5;
+}
+
+.card {
+  border-color: #aaaaaa;
+}
+
+input.is-invalid, select.is-invalid {
+  border-color: #a93a44;
+  background-color: #ffe8ea;
+}
+
+input, select {
+  border-radius: 0!important;
+}
